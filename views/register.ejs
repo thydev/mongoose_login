@@ -8,6 +8,11 @@
 </head>
 <body>
     <p><a href="/">Login</a></p>
+    <% if(typeof(errors) != 'undefined' ) { %>
+        <% for (var x in errors) { %>
+            <h5><%= errors[x].message %></h5>
+        <% } %>
+    <% } %>
     <form action="/register" method="post">
         <p>First name: <input type="text" name="first_name"></p>
         <p>Last name: <input type="text" name="last_name"></p>
